@@ -1,58 +1,61 @@
-#syntax
-if 5>2:
-    print("5 is greater than 2!")
-###python uses indentation to indicate a block of code.
-#*Also comments are made with #### <- these
-# !!!
-# LOL #
+#notes
+# "This is a string."
+# 'This is also a string.'
+# 'I told my friend, "Python is my favorite language!"'
+# "The language 'Python' is named after Monty Python, not the snake."
+# "One of Python's strengths is its diverse and supportive community."
+# string f:
+name = "ada lovelace"
+print(name.title())
+name = "Ada Lovelace"
+print(name.upper())
+print(name.lower())
+# rstrip() use this to strip a string from spaces at right lstrip() for left spaces
 
-# if 5 > 2:
-# print("Five is greater than two!") //ERROR!
+#in python int:
+# >>> 3 / 2
+# 1.5
+# Exponentiaton
+#>>> 3 ** 2
+# 9
+# 
 
-###The number of spaces is up to you as a programmer, the most common use is four, but it has to be at least one.
-if 5 > 2:
- print("Five is greater than two!")  #OK
-if 5 > 2:
-        print("Five is greater than two!") #OK
+age = 23
+message = "Happy " + str(age) + "rd Birthday!"
+print(message) #this is right ^^
+# 
 
-#if 5 > 2:
-# print("Five is greater than two!")
-#        print("Five is greater than two!") //Also ERROR!!!
+#LISTS
+# Python has a special syntax for accessing the last element in a list. By ask-
+# ing for the item at index -1, Python always returns the last item in the list:
+bicycles = ['trek', 'cannondale', 'redline', 'specialized']
+print(bicycles[-1]) #returns specialized
+bicycles.append('ducati') #adds elemnt to the end of the list
 
-print("Hello World!", end=" ")
-print("I will print on the same line.")
+motorcycles = ['honda', 'yamaha', 'suzuki']
+motorcycles.insert(0, 'ducati')
+print(motorcycles) #prints: ['ducati', 'honda', 'yamaha', 'suzuki']
+del motorcycles[0] #deletes
 
-# About declacring TYPEs:
-x = 4       # x is of type int
-x = "Sally" # x is now of type str
-print(x)
+motorcycles = ['ducati','honda', 'yamaha', 'suzuki']
+last_owned = motorcycles.pop()
+print("The last motorcycle I owned was a " + last_owned.title() + ".") #The last motorcycle I owned was a Suzuki.
+first_owned = motorcycles.pop(0) #anyposition
 
-# Casting:
-x = str(3)    # x will be '3'
-y = int(3)    # y will be 3
-z = float(3)  # z will be 3.0
+motorcycles.remove('ducati') #removing by value
+# list.sort() -> irrevetible
+# or .sort(reverse=True) 
+# sorted(list) -> sorts temporarily
+# list.reverse() -> to reverse the original order
+# len(list) lenght of the list
 
-# You can get the data type of a variable with the type() function.
-x = 5
-y = "John"
-print(type(x))
-print(type(y)) 
-
-#take note that
-#  Variable names are case-sensitive.
-
-# Python allows you to assign values to multiple variables in one line:
-x, y, z = "Orange", "Banana", "Cherry"
-x = y = z = "Orange"
-
-#If you have a collection of values in a list, tuple etc. Python allows you to
-# extract the values into variables. This is called unpacking.
-fruits = ["apple", "banana", "cherry"]
-x, y, z = fruits
-
-x = "Python"
-y = "is"
-z = "awesome"
-print(x, y ,z) #this one adds spaces on its own
-print(x + y + z) #this one doesn't
+for value in range(1,5):
+ print(value)
+#res:
+# 1
+# 2
+# 3
+# 4
+numbers = list(range(1,6))
+even_numbers = list(range(2,11,2))
 
