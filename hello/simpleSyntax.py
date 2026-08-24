@@ -40,9 +40,9 @@ del motorcycles[0] #deletes
 motorcycles = ['ducati','honda', 'yamaha', 'suzuki']
 last_owned = motorcycles.pop()
 print("The last motorcycle I owned was a " + last_owned.title() + ".") #The last motorcycle I owned was a Suzuki.
-first_owned = motorcycles.pop(0) #anyposition
-
 motorcycles.remove('ducati') #removing by value
+
+first_owned = motorcycles.pop(0) #anyposition
 # list.sort() -> irrevetible
 # or .sort(reverse=True) 
 # sorted(list) -> sorts temporarily
@@ -58,4 +58,5 @@ for value in range(1,5):
 # 4
 numbers = list(range(1,6))
 even_numbers = list(range(2,11,2))
+print (even_numbers)
 
