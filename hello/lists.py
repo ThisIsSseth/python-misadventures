@@ -29,3 +29,21 @@ print (squares[0:3])
 copy_of_squares = squares[:]
 # copy_of_squares = squares -> ERROR
 
+# Using the list() constructor to make a List:
+thislist = list(("apple", "banana", "cherry")) # note the double round-brackets
+# you can also 
+thislist[1:2] = ["blackcurrant", "watermelon"]
+# Note: The length of the list will change when the number
+#of items inserted does not match the number of items replaced.
+thislist.append("orange") #is to the end
+thislist.insert(1, "orange") #at specified index
+tropical = ["mango", "pineapple", "papaya"]
+thislist.extend(tropical) #adds tropical to end of thislist, it can extend(tuple/set/dictionaries)
+#.remove(item)
+#.pop()
+#.pop(index)
+#del
+#.clear() empties the list
+
+#len(thislist) get the size of the list
+
