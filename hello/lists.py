@@ -1,3 +1,39 @@
+#LISTS
+# Python has a special syntax for accessing the last element in a list. By 
+# asking for the item at index -1, Python always returns the last item in the list:
+bicycles = ['trek', 'cannondale', 'redline', 'specialized']
+print(bicycles[-1]) #returns specialized
+bicycles.append('ducati') #adds elemnt to the end of the list
+
+motorcycles = ['honda', 'yamaha', 'suzuki']
+motorcycles.insert(0, 'ducati')
+print(motorcycles) #prints: ['ducati', 'honda', 'yamaha', 'suzuki']
+del motorcycles[0] #deletes
+
+motorcycles = ['ducati','honda', 'yamaha', 'suzuki']
+last_owned = motorcycles.pop()
+print("The last motorcycle I owned was a " + last_owned.title() + ".") 
+#The last motorcycle I owned was a Suzuki.
+motorcycles.remove('ducati') #removing by value
+
+first_owned = motorcycles.pop(0) #anyposition
+# list.sort() -> irrevetible
+# or .sort(reverse=True) 
+# sorted(list) -> sorts temporarily
+# list.reverse() -> to reverse the original order
+# len(list) lenght of the list
+
+for value in range(1,5):
+ print(value)
+#res:
+# 1
+# 2
+# 3
+# 4
+numbers = list(range(1,6))
+even_numbers = list(range(2,11,2))
+print (even_numbers)
+
 squares = []
 for value in range(1,11):
  square = value**2
@@ -54,9 +90,13 @@ thislist.extend(tropical) #adds tropical to end of thislist, it can extend(tuple
 
 #len(thislist) get the size of the list
 
-[print(x) for x in thislist] #[] are a must
+#unpacking:
+fruits = ["apple", "banana", "cherry"]
+x, y, z = fruits
 
 #___ comprehension____
+[print(x) for x in thislist] #[] are a must
+
 fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
 newlist = []
 
@@ -65,9 +105,7 @@ for x in fruits:
     newlist.append(x)
 
 print(newlist)
-
 newlist = [x for x in fruits if "a" in x]
-
 print(newlist)
 
 # newlist = [expression for item in iterable if condition == True]

@@ -11,6 +11,91 @@ name = "Ada Lovelace"
 print(name.upper())
 print(name.lower())
 # rstrip() use this to strip a string from spaces at right lstrip() for left spaces
+#.replace("s1","s2") replaces s1 with s2
+a = "Hello, World!"
+print(a.split(",")) # returns ['Hello', ' World!'] 
+'''
+capitalize()	Converts the first character to upper case
+casefold()	    Converts string into lower case
+center()	    Returns a centered string
+count()	        Returns the number of times a specified value occurs in a string
+encode()	    Returns an encoded version of the string
+endswith()	    Returns true if the string ends with the specified value
+expandtabs()   	Sets the tab size of the string
+find()      	Searches the string for a specified value and returns the position of where it was found
+format()	    Formats specified values in a string
+format_map()	Formats specified values in a string
+index()	        Searches the string for a specified value and returns the position of where it was found
+isalnum()	    Returns True if all characters in the string are alphanumeric
+isalpha()	    Returns True if all characters in the string are in the alphabet
+isascii()	    Returns True if all characters in the string are ascii characters
+isdecimal()	    Returns True if all characters in the string are decimals
+isdigit()	    Returns True if all characters in the string are digits
+isidentifier()	Returns True if the string is an identifier
+islower()	    Returns True if all characters in the string are lower case
+isnumeric()	    Returns True if all characters in the string are numeric
+isprintable()  	Returns True if all characters in the string are printable
+isspace()   	Returns True if all characters in the string are whitespaces
+istitle() 	    Returns True if the string follows the rules of a title
+isupper()   	Returns True if all characters in the string are upper case
+join()	        Joins the elements of an iterable to the end of the string
+ljust()	        Returns a left justified version of the string
+lower()	        Converts a string into lower case
+lstrip()	    Returns a left trim version of the string
+maketrans()	    Returns a translation table to be used in translations
+partition()	    Returns a tuple where the string is parted into three parts
+replace()	    Returns a string where a specified value is replaced with a specified value
+rfind()	        Searches the string for a specified value and returns the last position of where it was found
+rindex()    	Searches the string for a specified value and returns the last position of where it was found
+rjust()	        Returns a right justified version of the string
+rpartition()   	Returns a tuple where the string is parted into three parts
+rsplit()    	Splits the string at the specified separator, and returns a list
+rstrip()	    Returns a right trim version of the string
+split()     	Splits the string at the specified separator, and returns a list
+splitlines()	Splits the string at line breaks and returns a list
+startswith()	Returns true if the string starts with the specified value
+strip()	        Returns a trimmed version of the string
+swapcase()	    Swaps cases, lower case becomes upper case and vice versa
+title()	        Converts the first character of each word to upper case
+translate()    	Returns a translated string
+upper()	        Converts a string into upper case
+zfill()	        Fills the string with a specified number of 0 values at the beginning
+'''
+
+#----------------f-string!
+'''
+F-String was introduced in Python 3.6, and is now the preferred way of formatting strings.
+To specify a string as an f-string, simply put an f in front of the string literal,
+and add curly brackets {} as placeholders for variables and other operations.
+'''
+age = 36
+txt = f"My name is John, I am {age}"
+print(txt)
+'''
+A placeholder can contain variables, operations, functions, and modifiers
+to format the value.
+A placeholder can include a modifier to format the value.
+
+A modifier is included by adding a colon : followed by a legal formatting
+type, like .2f which means fixed point number with 2 decimals
+price = 56
+txt = f"The price is {price:.2f} dollars"
+A placeholder can contain Python code, like math operations
+'''
+#--------excape character
+txt = "We are the so-called \"Vikings\" from the north."
+
+"""
+\'   	Single Quote 	
+\\ 	    Backslash 	
+\n   	New Line 	
+\r 	    Carriage Return 	
+\t   	Tab 	
+\b     	Backspace 	
+\f 	    Form Feed 	
+\ooo 	Octal value 	
+\xhh 	Hex value
+"""
 
 #in python int:
 # >>> 3 / 2
@@ -23,40 +108,30 @@ print(name.lower())
 age = 23
 message = "Happy " + str(age) + "rd Birthday!"
 print(message) #this is right ^^
-# 
 
-#LISTS
-# Python has a special syntax for accessing the last element in a list. By ask-
-# ing for the item at index -1, Python always returns the last item in the list:
-bicycles = ['trek', 'cannondale', 'redline', 'specialized']
-print(bicycles[-1]) #returns specialized
-bicycles.append('ducati') #adds elemnt to the end of the list
 
-motorcycles = ['honda', 'yamaha', 'suzuki']
-motorcycles.insert(0, 'ducati')
-print(motorcycles) #prints: ['ducati', 'honda', 'yamaha', 'suzuki']
-del motorcycles[0] #deletes
+#You have to use the same number of spaces in the same block of code, 
+# otherwise Python will give you an error:
+# Semicolons!!! (Optional, Rarely Used)
+print("Hello"); print("How are you?"); print("Bye bye!") 
 
-motorcycles = ['ducati','honda', 'yamaha', 'suzuki']
-last_owned = motorcycles.pop()
-print("The last motorcycle I owned was a " + last_owned.title() + ".") #The last motorcycle I owned was a Suzuki.
-motorcycles.remove('ducati') #removing by value
+x, y, z = "Orange", "Banana", "Cherry"
 
-first_owned = motorcycles.pop(0) #anyposition
-# list.sort() -> irrevetible
-# or .sort(reverse=True) 
-# sorted(list) -> sorts temporarily
-# list.reverse() -> to reverse the original order
-# len(list) lenght of the list
 
-for value in range(1,5):
- print(value)
-#res:
-# 1
-# 2
-# 3
-# 4
-numbers = list(range(1,6))
-even_numbers = list(range(2,11,2))
-print (even_numbers)
+"""
+Text Type:  	str
+Numeric Types: 	int,         float,      complex
+Sequence Types: list,        tuple,     range
+Mapping Type: 	dict
+Set Types:  	set,         frozenset
+Boolean Type: 	bool
+Binary Types: 	bytes,       bytearray,  memoryview
+None Type:   	NoneType
+---------------------------------------------------
+import random
+
+print(random.randrange(1, 10)) 
+
+
+"""
 
