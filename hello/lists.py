@@ -28,6 +28,10 @@ print (squares[0:3])
 
 copy_of_squares = squares[:]
 # copy_of_squares = squares -> ERROR
+# list2 = list1: list2 will only be a reference to list1,
+# and changes made in list1 will automatically also be made in list2.
+# mylist = list(thislist) this also does the copying
+
 
 # Using the list() constructor to make a List:
 thislist = list(("apple", "banana", "cherry")) # note the double round-brackets
@@ -44,6 +48,35 @@ thislist.extend(tropical) #adds tropical to end of thislist, it can extend(tuple
 #.pop(index)
 #del
 #.clear() empties the list
+#.reverse
+#.sort() method is case sensitive
+#.sort(reverse = True)
 
 #len(thislist) get the size of the list
 
+[print(x) for x in thislist] #[] are a must
+
+#___ comprehension____
+fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+newlist = []
+
+for x in fruits:
+  if "a" in x:
+    newlist.append(x)
+
+print(newlist)
+
+newlist = [x for x in fruits if "a" in x]
+
+print(newlist)
+
+# newlist = [expression for item in iterable if condition == True]
+# newlist = [x if x != "banana" else "orange" for x in fruits] 
+# "Return the item if it is not banana, if it is banana return orange"
+
+def myfunc(n):
+  return abs(n - 50)
+
+thislist = [100, 50, 65, 82, 23]
+thislist.sort(key = myfunc)
+print(thislist)
