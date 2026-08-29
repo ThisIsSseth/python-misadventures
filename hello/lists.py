@@ -83,14 +83,14 @@ thislist.extend(tropical) #adds tropical to end of thislist, it can extend(tuple
 #.pop()
 #.pop(index)
 #del
+# del thislist #deletes the list completely
 #.clear() empties the list
 #.reverse
 #.sort() method is case sensitive
 #.sort(reverse = True)
-
 #len(thislist) get the size of the list
 
-#unpacking:
+#___ unpacking:
 fruits = ["apple", "banana", "cherry"]
 x, y, z = fruits
 
@@ -111,6 +111,8 @@ print(newlist)
 # newlist = [expression for item in iterable if condition == True]
 # newlist = [x if x != "banana" else "orange" for x in fruits] 
 # "Return the item if it is not banana, if it is banana return orange"
+
+
 
 def myfunc(n):
   return abs(n - 50)

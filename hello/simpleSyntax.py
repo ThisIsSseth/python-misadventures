@@ -71,6 +71,8 @@ and add curly brackets {} as placeholders for variables and other operations.
 age = 36
 txt = f"My name is John, I am {age}"
 print(txt)
+
+
 '''
 A placeholder can contain variables, operations, functions, and modifiers
 to format the value.
@@ -82,6 +84,8 @@ price = 56
 txt = f"The price is {price:.2f} dollars"
 A placeholder can contain Python code, like math operations
 '''
+
+
 #--------excape character
 txt = "We are the so-called \"Vikings\" from the north."
 
@@ -131,7 +135,93 @@ None Type:   	NoneType
 import random
 
 print(random.randrange(1, 10)) 
+---------------------------------------------------
+Arithmetic operations
++ 	Addition 	    x + y 	
+- 	Subtraction 	x - y 	
+* 	Multiplication 	x * y 	
+/ 	Division 	    x / y 	 always a float answer
+% 	Modulus 	    x % y 	
+** 	Exponentiation 	x ** y 	
+// 	Floor division 	x // y    always integer(rounds down)
 
+assignment 
+=      	x = 5 	        x = 5 	
++=  	x += 3 	        x = x + 3 	
+-= 	    x -= 3          x = x - 3 	
+*=   	x *= 3  	    x = x * 3 	
+/= 	    x /= 3          x = x / 3 	
+%=  	x %= 3          x = x % 3 	
+//= 	x //= 3     	x = x // 3 	
+**= 	x **= 3 	    x = x ** 3 	
+&=  	x &= 3         	x = x & 3 	
+|=  	x |= 3      	x = x | 3 	
+^=     	x ^= 3      	x = x ^ 3 	
+>>= 	x >>= 3 	    x = x >> 3 	
+:= 	    print(x := 3)   x = 3; print(x)
 
+ternary op
+num = 6
+x = "WEEKEND!" if num > 5 else "Workday"
+
+x = "Fri" if num == 5 else "Sat" if num == 6 else "Sun" if num == 7 else "weekday"
+
+chaining comparison
+print(1 < x < 10)
+print(1 < x and x < 10)
+
+identity op
+Identity operators are used to compare the objects, not if they are equal,
+but if they are actually the same object, with the same memory location
+is
+is not
+
+is - Checks if both variables point to the same object in memory
+== - Checks if the values of both variables are equal
+
+membership op
+Membership operators are used to test if a sequence is presented in an object
+in
+not in  
+
+bitwise op
+&  	AND 	                x & y 
+    Sets each bit to 1 
+    if both bits are 1 		
+| 	OR 	                    x | y 
+    Sets each bit to 1 
+    if one of two bits is 1 		
+^ 	XOR 	                x ^ y
+    Sets each bit to 1 if 
+    only one of two bits
+    is 1 	 	
+~ 	NOT 	                ~x 
+    Inverts all the bits 		
+<< 	Zero fill left shift 	x << 2
+    Shift left by pushing
+    zeros in from the right
+    and let the leftmost
+    bits fall off 	 	
+>> 	Signed right shift 	    x >> 2
+    Shift right by  	
+    pushing copies of the leftmost bit 
+    in from the left, and let the rightmost
+    bits fall off
+
+precedence order
+() 	Parentheses 	
+** 	Exponentiation 	
++x  -x  ~x 	Unary plus, unary minus, and bitwise NOT 	
+*  /  //  % 	Multiplication, division, floor division, and modulus 	
++  - 	Addition and subtraction 	
+<<  >> 	Bitwise left and right shifts 	
+& 	Bitwise AND 	
+^ 	Bitwise XOR 	
+| 	Bitwise OR 	
+==  !=  >  >=  <  <=  is  is not  in  not in  	Comparisons, identity, and membership operators 	
+not 	Logical NOT 	
+and 	AND 	
+or 	OR
 """
+
 

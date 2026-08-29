@@ -1,9 +1,33 @@
-#----tuples ---
+#----_____tuples _____---------------------------
 # Python refers to values that cannot change as immutable, and an immutable list is called a tuple.
 dimensions = (200, 50)
+# Tuples can also be created without the parentheses
+dimensions = 200, 50
 # dimensions[0] = 250 -> ERROR: TypeError: 'tuple' object does not support item assignment
 # what we can do:
 dimensions = (400, 100)
+# also Once a tuple is created, you cannot change its values. Tuples are
+# unchangeable, or immutable as it also is called. But there is a
+# workaround. You can convert the tuple into a list, change the list,
+# and convert the list back into a tuple. using list() and tuple()
+'''
+no .append() support but we can do both above and:
+thistuple = ("apple", "banana", "cherry")
+y = ("orange",)
+thistuple += y
+'''
+
+# unpacking when the numbers don't match is by *
+fruits = ("apple", "banana", "cherry", "strawberry", "raspberry")
+(green, yellow, *red) = fruits
+
+# tuple with one item
+thistuple = ("apple",)
+
+#NOT a tuple
+thistuple = ("apple")
+# empty tuple 
+thistuple = ()
 
 for dimension in dimensions:
     print(dimension) #returns all the elements in the tuple like in a list
@@ -11,7 +35,7 @@ for dimension in dimensions:
 #100
 
 
-#----dictionary ---
+#----____dictionary ____-------------------------
 alien_0 = {'color': 'green', 'points': 5}
 new_points = alien_0['points']
 print("You just earned " + str(new_points) + " points!")
