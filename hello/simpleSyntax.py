@@ -131,6 +131,31 @@ Set Types:  	set,         frozenset
 Boolean Type: 	bool
 Binary Types: 	bytes,       bytearray,  memoryview
 None Type:   	NoneType
+
+Also, use the global keyword if you want to make a change to a global
+variable inside a function.
+The nonlocal keyword makes the variable belong to the outer function.
+
+LEGB rule:
+Local - Inside the current function
+Enclosing - Inside enclosing functions (from inner to outer)
+Global - At the top level of the module
+Built-in - In Python's built-in namespace
+"""
+x = "global"
+
+def outer():
+  x = "enclosing"
+  def inner():
+    x = "local"
+    print("Inner:", x)
+  inner()
+  print("Outer:", x)
+
+outer()
+print("Global:", x) 
+
+"""
 ---------------------------------------------------
 import random
 
@@ -159,17 +184,19 @@ assignment
 ^=     	x ^= 3      	x = x ^ 3 	
 >>= 	x >>= 3 	    x = x >> 3 	
 := 	    print(x := 3)   x = 3; print(x)
+"""
 
-ternary op
+# ternary op
 num = 6
 x = "WEEKEND!" if num > 5 else "Workday"
-
 x = "Fri" if num == 5 else "Sat" if num == 6 else "Sun" if num == 7 else "weekday"
 
-chaining comparison
+
+# chaining comparison
 print(1 < x < 10)
 print(1 < x and x < 10)
 
+"""
 identity op
 Identity operators are used to compare the objects, not if they are equal,
 but if they are actually the same object, with the same memory location
