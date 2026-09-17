@@ -90,6 +90,11 @@ thislist.extend(tropical) #adds tropical to end of thislist, it can extend(tuple
 #.sort(reverse = True)
 #len(thislist) get the size of the list
 
+# The range object is a data type that represents an immutable
+# sequence of numbers, and it is not directly displayable. 
+# Therefore, ranges are often converted to lists for display.
+print(list(range(5, 20, 3))) 
+
 #___ unpacking:
 fruits = ["apple", "banana", "cherry"]
 x, y, z = fruits
