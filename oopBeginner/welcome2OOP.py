@@ -94,3 +94,86 @@ class Student(Person): #this is how to inherit Person
     # By using the super() function, you do not have to use the name of
     # the parent element, it will automatically inherit the methods and 
     # properties from its parent.
+
+# In Python, you can make properties private by using a double underscore __ prefix
+class Person:
+  def __init__(self, name, age):
+    self.name = name
+    self.__age = age # Private property
+
+p1 = Person("Emil", 25)
+print(p1.name)
+print(p1.__age) # This will cause an error 
+
+# A single underscore _ is just a convention. It tells other 
+# programmers that the property is intended for internal use,
+# but Python doesn't enforce this restriction.
+
+# You can also make methods private using the double underscore 
+# prefix
+# Name mangling is how Python implements private properties and methods.
+
+# When you use double underscores __, Python automatically renames it
+# internally by adding _ClassName in front. For example, __age 
+# becomes _Person__age.
+class Person:
+  def __init__(self, name, age):
+    self.name = name
+    self.__age = age
+
+p1 = Person("Emil", 30)
+
+# This is how Python mangles the name:
+print(p1._Person__age) # Not recommended! 
+
+# -----_____ Inner and Outer classes_____ ----------
+class Outer:
+  def __init__(self):
+    self.name = "Outer"
+
+  class Inner:
+    def __init__(self):
+      self.name = "Inner"
+
+    def display(self):
+      print("Hello from inner class")
+
+outer = Outer()
+inner = outer.Inner()
+inner.display() 
+
+# ----------------
+class Outer:
+  def __init__(self):
+    self.name = "Emil"
+
+  class Inner:
+    def __init__(self, outer):
+      self.outer = outer
+
+    def display(self):
+      print(f"Outer class name: {self.outer.name}")
+
+outer = Outer()
+inner = outer.Inner(outer)
+inner.display() 
+# Inner classes in Python do not automatically have access to the
+# outer class instance. If you want the inner class to access the
+# outer class, you need to pass the outer class instance as a parameter
+
+class Computer:
+  def __init__(self):
+    self.cpu = self.CPU()
+    self.ram = self.RAM()
+
+  class CPU:
+    def process(self):
+      print("Processing data...")
+
+  class RAM:
+    def store(self):
+      print("Storing data...")
+
+computer = Computer()
+computer.cpu.process()
+computer.ram.store()
