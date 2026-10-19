@@ -199,6 +199,27 @@ and __doc__ attributes
 '''
 
 
+# Common built-in decorators:
+# @staticmethod defines a method that does not receive self or cls automatically;
+# use it for a function logically grouped with a class but needing no instance/class state.
+# @classmethod receives the class as its first argument (usually named cls);
+# often used for alternative constructors or behavior that should work with subclasses.
+# @property exposes a method through attribute syntax (obj.value instead of obj.value());
+# useful for computed attributes and for adding validation later without changing the public API.
+# @functools.wraps(func) is commonly used inside custom decorators to preserve the wrapped
+# function's metadata (such as __name__ and __doc__) and help tools inspect it correctly.
+# @dataclass (from dataclasses) automatically generates common methods such as __init__
+# and __repr__ for classes mainly used to store data; it is a class decorator, not a function decorator.
+#
+# Example of functools.wraps:
+# from functools import wraps
+# def log_calls(func):
+#     @wraps(func)
+#     def wrapper(*args, **kwargs):
+#         print(f"Calling {func.__name__}")
+#         return func(*args, **kwargs)
+#     return wrapper
+#
 #----____ lambda____-----------------------------
 # a smol function
 x = lambda a, b, c : a + b + c
