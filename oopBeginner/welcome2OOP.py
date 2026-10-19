@@ -68,11 +68,6 @@ print(button_clicks())
 # defined elsewhere in the class. The method returns a bool, but the
 # annotation itself does not force that return type.
 
-class Person:
-  def __init__(self, name, age):
-    self.name = name
-    self.age = age
-
 class LibraryItem:
   def __init__(self, giver_operator=None, real_return_date=None):
     self.giver_operator = giver_operator
